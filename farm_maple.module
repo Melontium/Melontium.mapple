@@ -7,14 +7,19 @@
 include_once 'farm_maple.features.inc';
 
 /**
- * Implements hook_farm_ui_entities().
+ * Implements hook_farm_record_types().
  */
-function farm_maple_farm_ui_entities() {
+function farm_maple_farm_record_types() {
   return array(
     'farm_asset' => array(
       'sugar_bush' => array(
         'label' => t('Sugar Bush'),
         'label_plural' => t('Sugar Bushes'),
+        'log_settings' => array(
+          'name_pattern' => 'Tap [log:field-farm-sugar-bush]',
+          'name_edit' => FALSE,
+          'done' => FALSE,
+        ),
         'view' => 'farm_sugar_bushes',
       ),
     ),
